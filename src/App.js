@@ -1,26 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useRoutes, A } from "hookrouter";
+import routes from "./router";
 
-function App() {
+export default function App(){
+  const routeResult = useRoutes(routes);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <A href="/about">About</A>
+      <br />
+      <A href="/home">Home</A>
+      {routeResult}
     </div>
   );
 }
-
-export default App;
